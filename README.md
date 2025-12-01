@@ -11,7 +11,7 @@ A minimalist Python CLI tool for converting files between formats within the sam
 
 ## Requirements
 
-### System Dependencies
+### System dependencies
 
 This tool requires the following external command-line tools to be installed and available in your PATH:
 
@@ -25,7 +25,7 @@ Installation instructions:
 - **Linux (Ubuntu/Debian)**: `sudo apt-get install ffmpeg imagemagick libreoffice`
 - **Windows**: Download installers from the respective project websites
 
-### Python Requirements
+### Python requirements
 
 - Python 3.11 or higher
 - See `requirements.txt` for Python dependencies
@@ -59,7 +59,7 @@ Installation instructions:
 
 ## Usage
 
-### Basic Syntax
+### Basic syntax
 
 ```bash
 python anything2anything.py INPUT_PATH OUTPUT_PATH [options]
@@ -73,7 +73,7 @@ python anything2anything.py INPUT_PATH OUTPUT_PATH [options]
 
 ### Examples
 
-#### Image Conversion
+#### Image conversion
 
 ```bash
 # Convert HEIC to JPG
@@ -83,7 +83,7 @@ python anything2anything.py inputs/photo.heic outputs/photo.jpg
 python anything2anything.py inputs/image.jpg outputs/image.webp --verbose
 ```
 
-#### Audio Conversion
+#### Audio conversion
 
 ```bash
 # Convert M4A to MP3
@@ -93,7 +93,7 @@ python anything2anything.py inputs/audio.m4a outputs/audio.mp3
 python anything2anything.py inputs/recording.wav outputs/recording.m4a
 ```
 
-#### Video Conversion
+#### Video conversion
 
 ```bash
 # Convert MOV to MP4
@@ -103,7 +103,7 @@ python anything2anything.py inputs/video.mov outputs/video.mp4
 python anything2anything.py inputs/video.mp4 outputs/video.mov --force
 ```
 
-#### Document Conversion
+#### Document conversion
 
 ```bash
 # Convert DOCX to ODT
@@ -113,7 +113,7 @@ python anything2anything.py inputs/document.docx outputs/document.odt
 python anything2anything.py inputs/document.doc outputs/document.rtf
 ```
 
-#### Spreadsheet Conversion
+#### Spreadsheet conversion
 
 ```bash
 # Convert XLSX to ODS
@@ -123,14 +123,14 @@ python anything2anything.py inputs/spreadsheet.xlsx outputs/spreadsheet.ods
 python anything2anything.py inputs/data.csv outputs/data.xlsx
 ```
 
-#### Presentation Conversion
+#### Presentation conversion
 
 ```bash
 # Convert PPTX to ODP
 python anything2anything.py inputs/presentation.pptx outputs/presentation.odp
 ```
 
-## Supported Formats
+## Supported formats
 
 ### Audio
 - `.mp3` - MPEG Audio Layer 3
@@ -168,7 +168,7 @@ python anything2anything.py inputs/presentation.pptx outputs/presentation.odp
 - `.txt` - Plain Text
 - `.rtf` - Rich Text Format
 
-## Error Handling
+## Error handling
 
 The tool provides clear error messages for common issues:
 
@@ -180,7 +180,7 @@ The tool provides clear error messages for common issues:
 
 Use the `--verbose` flag to see detailed error output from the underlying tools.
 
-## Project Structure
+## Project structure
 
 ```
 anything2anything/
