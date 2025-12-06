@@ -55,6 +55,7 @@ EXTENSION_TO_CATEGORY: dict[str, Category] = {
     "odt": Category.DOCUMENT,
     "txt": Category.DOCUMENT,
     "rtf": Category.DOCUMENT,
+    "pdf": Category.DOCUMENT,
 }
 
 # Alias mapping for extensions that should be treated identically

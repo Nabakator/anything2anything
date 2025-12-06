@@ -198,7 +198,7 @@ def convert_image(
     run_command(cmd, verbose=verbose, tool_name="ImageMagick")
 
 
-def convert_office(
+def convert_document(
     input_path: Path,
     output_path: Path,
     verbose: bool = False,

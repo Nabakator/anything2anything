@@ -12,7 +12,7 @@ from src.converters import (
     ConversionError,
     convert_audio,
     convert_image,
-    convert_office,
+    convert_document,
     convert_video,
 )
 
@@ -77,7 +77,7 @@ def convert_file(
     elif input_category == Category.IMAGE:
         convert_image(input_path, output_path, verbose=verbose)
     elif input_category in (Category.DOCUMENT, Category.SPREADSHEET, Category.PRESENTATION):
-        convert_office(input_path, output_path, verbose=verbose)
+        convert_document(input_path, output_path, verbose=verbose)
     else:
         raise ConversionError(f"No converter available for category: {input_category.value}")
 

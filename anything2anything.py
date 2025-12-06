@@ -49,7 +49,7 @@ def main(
     - Image: heic, jpg/jpeg, gif, icns, webp, avif
     - Spreadsheet: csv, ods, xlsx, xls, xlsm
     - Presentation: odp, ppt, pptx
-    - Document: docx, doc, odt, txt, rtf
+    - Document: docx, doc, odt, txt, rtf, pdf
 
     Examples:
         # Convert HEIC image to JPG
