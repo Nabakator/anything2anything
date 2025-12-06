@@ -167,6 +167,7 @@ python anything2anything.py inputs/presentation.pptx outputs/presentation.odp
 - `.odt` - OpenDocument Text
 - `.txt` - Plain Text
 - `.rtf` - Rich Text Format
+- `.pdf` - Portable Document Format
 
 ## Error handling
 
