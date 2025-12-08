@@ -7,8 +7,8 @@ validating same-category conversions, and dispatching to the correct backend.
 
 from pathlib import Path
 
-from src.categories import Category, get_category
-from src.converters import (
+from anything2anything.categories import Category, get_category
+from anything2anything.converters import (
     ConversionError,
     convert_audio,
     convert_image,
