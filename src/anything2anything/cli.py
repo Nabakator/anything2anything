@@ -46,7 +46,7 @@ def main(
     Only conversions within the same category are supported:
     - Audio: mp3, wav, m4a
     - Video: mov, mp4
-    - Image: heic, jpg/jpeg, gif, icns, webp, avif
+    - Image: heic, jpg/jpeg, gif, icns, webp, avif, svg, png
     - Spreadsheet: csv, ods, xlsx, xls, xlsm
     - Presentation: odp, ppt, pptx
     - Document: docx, doc, odt, txt, rtf, pdf
@@ -116,4 +116,3 @@ def cli() -> None:
 
 if __name__ == "__main__":
     cli()
-

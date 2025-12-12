@@ -36,6 +36,8 @@ EXTENSION_TO_CATEGORY: dict[str, Category] = {
     "icns": Category.IMAGE,
     "webp": Category.IMAGE,
     "avif": Category.IMAGE,
+    "png": Category.IMAGE,
+    "svg": Category.IMAGE,
     # Video
     "mov": Category.VIDEO,
     "mp4": Category.VIDEO,
@@ -152,4 +154,3 @@ def get_supported_extensions(category: Optional[Category] = None) -> list[str]:
     return sorted(
         ext for ext, cat in EXTENSION_TO_CATEGORY.items() if cat == category
     )
-
