@@ -28,7 +28,6 @@ Installation instructions:
 ### Python requirements
 
 - Python 3.11 or higher
-- See `requirements.txt` for Python dependencies
 
 ## Installation
 
@@ -52,9 +51,14 @@ Installation instructions:
    .venv\Scripts\activate
    ```
 
-4. Install Python dependencies:
+4. Install the package:
    ```bash
-   pip install -r requirements.txt
+   pip install .
+   ```
+
+   For development (editable install):
+   ```bash
+   pip install -e .
    ```
 
 ## Usage
@@ -62,8 +66,10 @@ Installation instructions:
 ### Basic syntax
 
 ```bash
-python anything2anything.py INPUT_PATH OUTPUT_PATH [options]
+anything2anything INPUT_PATH OUTPUT_PATH [options]
 ```
+
+> **Note**: For backwards compatibility, `python anything2anything.py ...` still works, but the recommended way is to use the `anything2anything` command after installation.
 
 ### Options
 
@@ -77,57 +83,57 @@ python anything2anything.py INPUT_PATH OUTPUT_PATH [options]
 
 ```bash
 # Convert HEIC to JPG
-python anything2anything.py inputs/photo.heic outputs/photo.jpg
+anything2anything inputs/photo.heic outputs/photo.jpg
 
 # Convert JPG to WebP with verbose output
-python anything2anything.py inputs/image.jpg outputs/image.webp --verbose
+anything2anything inputs/image.jpg outputs/image.webp --verbose
 ```
 
 #### Audio conversion
 
 ```bash
 # Convert M4A to MP3
-python anything2anything.py inputs/audio.m4a outputs/audio.mp3
+anything2anything inputs/audio.m4a outputs/audio.mp3
 
 # Convert WAV to M4A
-python anything2anything.py inputs/recording.wav outputs/recording.m4a
+anything2anything inputs/recording.wav outputs/recording.m4a
 ```
 
 #### Video conversion
 
 ```bash
 # Convert MOV to MP4
-python anything2anything.py inputs/video.mov outputs/video.mp4
+anything2anything inputs/video.mov outputs/video.mp4
 
 # Convert with force overwrite
-python anything2anything.py inputs/video.mp4 outputs/video.mov --force
+anything2anything inputs/video.mp4 outputs/video.mov --force
 ```
 
 #### Document conversion
 
 ```bash
 # Convert DOCX to ODT
-python anything2anything.py inputs/document.docx outputs/document.odt
+anything2anything inputs/document.docx outputs/document.odt
 
 # Convert DOC to RTF
-python anything2anything.py inputs/document.doc outputs/document.rtf
+anything2anything inputs/document.doc outputs/document.rtf
 ```
 
 #### Spreadsheet conversion
 
 ```bash
 # Convert XLSX to ODS
-python anything2anything.py inputs/spreadsheet.xlsx outputs/spreadsheet.ods
+anything2anything inputs/spreadsheet.xlsx outputs/spreadsheet.ods
 
 # Convert CSV to XLSX
-python anything2anything.py inputs/data.csv outputs/data.xlsx
+anything2anything inputs/data.csv outputs/data.xlsx
 ```
 
 #### Presentation conversion
 
 ```bash
 # Convert PPTX to ODP
-python anything2anything.py inputs/presentation.pptx outputs/presentation.odp
+anything2anything inputs/presentation.pptx outputs/presentation.odp
 ```
 
 ## Supported formats
@@ -185,13 +191,16 @@ Use the `--verbose` flag to see detailed error output from the underlying tools.
 
 ```
 anything2anything/
-├── anything2anything.py          # Main CLI entry point
-├── src/                          # Internal package
-│   ├── __init__.py
-│   ├── categories.py             # Category definitions and extension mapping
-│   ├── converters.py             # Backend conversion functions
-│   └── dispatcher.py             # Conversion routing logic
-├── requirements.txt              # Python dependencies
+├── anything2anything.py          # Compatibility shim (backwards compatibility)
+├── pyproject.toml                # Package configuration and build metadata
+├── src/                          # Source code directory
+│   └── anything2anything/        # Main package
+│       ├── __init__.py
+│       ├── cli.py                # CLI entry point
+│       ├── categories.py         # Category definitions and extension mapping
+│       ├── converters.py         # Backend conversion functions
+│       └── dispatcher.py         # Conversion routing logic
+├── requirements.txt              # Python dependencies (for reference)
 ├── .gitignore                    # Git ignore patterns
 ├── inputs/                       # Directory for sample inputs
 ├── outputs/                      # Directory for sample outputs
@@ -200,8 +209,20 @@ anything2anything/
 
 ## Development
 
+### Setup
+
+For development, install the package in editable mode:
+
+```bash
+pip install -e .
+```
+
+This allows you to make changes to the code and test them immediately without reinstalling.
+
+### Extending the codebase
+
 The codebase is designed to be simple and extensible. To add support for new formats:
 
-1. Add the extension to `EXTENSION_TO_CATEGORY` in `src/categories.py`
-2. If needed, add a new converter function in `src/converters.py`
+1. Add the extension to `EXTENSION_TO_CATEGORY` in `src/anything2anything/categories.py`
+2. If needed, add a new converter function in `src/anything2anything/converters.py`
 3. Update the dispatcher if a new category is added
