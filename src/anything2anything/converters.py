@@ -178,7 +178,7 @@ def convert_image(
     """
     Convert image files using ImageMagick.
 
-    Supports: heic, jpg/jpeg, gif, icns, webp, avif
+    Supports: heic, jpg/jpeg, gif, icns, webp, avif, svg, png
 
     Args:
         input_path: Path to input image file.
@@ -254,4 +254,3 @@ def convert_document(
         if verbose:
             print(f"Renaming {expected_output} to {output_path}")
         expected_output.rename(output_path)
-

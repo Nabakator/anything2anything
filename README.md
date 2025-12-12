@@ -154,6 +154,8 @@ anything2anything inputs/presentation.pptx outputs/presentation.odp
 - `.icns` - Apple Icon Image
 - `.webp` - WebP Image
 - `.avif` - AV1 Image File Format
+- `.svg` - Scalable Vector Graphics
+- `.png` - Portable Network Graphics
 
 ### Spreadsheet
 - `.csv` - Comma-Separated Values
